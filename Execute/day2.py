@@ -1,10 +1,7 @@
-import os
-
 # Ouverture des listes
 groupes = []
-dossier_script = os.path.dirname(__file__)
-chemin_fichier = os.path.join(dossier_script, "data.csv")
-with open(chemin_fichier, "r") as f:
+
+with open("Data/day2.csv", "r") as f:
     groupes = [[int(x) for x in ligne.strip().split()] for ligne in f if ligne.strip()]
 
 """

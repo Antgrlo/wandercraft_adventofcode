@@ -1,10 +1,6 @@
-import os
 import re
 
-dossier_script = os.path.dirname(__file__)
-chemin_fichier = os.path.join(dossier_script, "data.txt")
-
-with open(chemin_fichier, "r") as f:
+with open("Data/day3.txt", "r") as f:
     data = f.read()
 
 # Partie 1

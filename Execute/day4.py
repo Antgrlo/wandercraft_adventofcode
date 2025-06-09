@@ -1,9 +1,4 @@
-import os
-
-dossier_script = os.path.dirname(__file__)
-chemin_fichier = os.path.join(dossier_script, "data.txt")
-
-with open(chemin_fichier, "r") as f:
+with open("Data/day4.txt", "r") as f:
     lignes = [line.strip() for line in f if line.strip()] #liste des lignes
 
 grille = [list(ligne) for ligne in lignes]

@@ -1,12 +1,9 @@
 import pandas as pd
 from collections import Counter
-import os
 
 ## Part 1 
 
-base_dir = os.path.dirname(__file__)
-fichier_csv = os.path.join(base_dir, "data.csv")
-df = pd.read_csv(fichier_csv, sep=r"\s+", header=None, names=["col1", "col2"])
+df = pd.read_csv("Data/day1.csv", sep=r"\s+", header=None, names=["col1", "col2"])
 
 liste1, liste2 = sorted(df["col1"]), sorted(df["col2"])
 
