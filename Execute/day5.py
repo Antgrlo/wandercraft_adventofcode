@@ -1,5 +1,7 @@
 import csv
 
+# Partie 1
+
 # Lecture des données
 with open('Data/day5/day5.csv', 'r', encoding='utf-8') as f:
     donnees = [list(map(int, ligne)) for ligne in csv.reader(f) if ligne]
@@ -21,3 +23,24 @@ resultat = [ligne[len(ligne)//2] for ligne in donnees if ligne_est_valide(ligne,
 
 # Résultat
 print("Le résultat est :", sum(resultat))
+
+# Partie 2
+
+# Recombinaison
+
+def refaire_ligne(ligne, regles):
+    for i in range(len(ligne)):
+        for j in range(len(ligne)):
+            if (i < j and (ligne[j], ligne[i]) in regles) or (j < i and (ligne[i], ligne[j]) in regles):
+                x=ligne[i]
+                ligne[i]=ligne[j]
+                ligne[j]=x
+    return ligne
+
+#Traitement
+
+resultat = [refaire_ligne(ligne, regles)[len(ligne)//2] for ligne in donnees if not ligne_est_valide(ligne, regles)]
+
+print("Le résultat est :", sum(resultat))
+
+
